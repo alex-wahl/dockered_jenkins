@@ -1,0 +1,13 @@
+version: "3.3"
+
+services:
+  jenkins:
+    image: jenkins_automation
+    ports:
+      - "8080:8080"
+    build:
+      context: .
+      dockerfile: Dockerfile
+    restart: on-failure
+    volumes:
+      - ./jenkins_home:/var/jenkins_home
